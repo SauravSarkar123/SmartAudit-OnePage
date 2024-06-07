@@ -94,7 +94,7 @@ const Tokenomics = () => {
       <GridBackgroundDemo/>
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">Tokenomics</h2>
+          <h2 className="text-4xl font-bold mb-4 text-[#DFC03E]">Tokenomics</h2>
           <p className="text-lg leading-relaxed">
             Discover the distribution and key metrics of our token. Transparency and clarity are at the heart of our project.
           </p>

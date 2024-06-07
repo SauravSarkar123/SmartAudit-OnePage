@@ -7,6 +7,7 @@ const Navbar = ({ logo }) => {
   const [isClient, setIsClient] = useState(false);
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [timeoutId, setTimeoutId] = useState(null);
+  const [hasScrolledPastAbout, setHasScrolledPastAbout] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
@@ -27,33 +28,57 @@ const Navbar = ({ logo }) => {
           }
 
           if (aboutSectionTop <= 0) {
+            setHasScrolledPastAbout(true);
             setIsNavbarVisible(true);
 
             clearTimeout(timeoutId);
             const newTimeoutId = setTimeout(() => {
               setIsNavbarVisible(false);
-            }, 2000);
+            }, 1000);
             setTimeoutId(newTimeoutId);
           } else {
+            setHasScrolledPastAbout(false);
             setIsNavbarVisible(true);
-            clearTimeout(timeoutId); // Clear any existing timeout to ensure navbar stays visible
+            clearTimeout(timeoutId);
           }
         }
       };
 
+      const handleMouseEnter = () => {
+        if (hasScrolledPastAbout) {
+          setIsNavbarVisible(true);
+          clearTimeout(timeoutId);
+        }
+      };
+
+      const handleMouseLeave = () => {
+        if (hasScrolledPastAbout) {
+          const newTimeoutId = setTimeout(() => {
+            setIsNavbarVisible(false);
+          }, 1000);
+          setTimeoutId(newTimeoutId);
+        }
+      };
+
       window.addEventListener("scroll", handleScroll);
+      const navbar = document.getElementById("navbar");
+      navbar.addEventListener("mouseenter", handleMouseEnter);
+      navbar.addEventListener("mouseleave", handleMouseLeave);
 
       return () => {
         window.removeEventListener("scroll", handleScroll);
+        navbar.removeEventListener("mouseenter", handleMouseEnter);
+        navbar.removeEventListener("mouseleave", handleMouseLeave);
         clearTimeout(timeoutId);
       };
     }
-  }, [isClient, timeoutId]);
+  }, [isClient, timeoutId, hasScrolledPastAbout]);
 
   if (!isClient) return null;
 
   return (
     <nav
+      id="navbar"
       className={`fixed top-0 left-0 w-full px-4 py-2 flex justify-between items-center z-30 transition-transform duration-300 ${isSticky ? "bg-black bg-opacity-50 shadow-lg" : "bg-transparent"} ${isNavbarVisible ? "translate-y-0" : "-translate-y-full"}`}
       style={{
         backdropFilter: isSticky ? "blur(10px)" : "none",
@@ -73,7 +98,7 @@ const Navbar = ({ logo }) => {
             duration={800}
             offset={-70}
           >
-            <p className="text-white hover:text-orange-500 font-medium cursor-pointer">Home</p>
+            <p className="text-white hover:text-[#DFC03E] font-medium cursor-pointer">Home</p>
           </ScrollLink>
         </li>
         <li>
@@ -83,7 +108,7 @@ const Navbar = ({ logo }) => {
             duration={800}
             offset={-70}
           >
-            <p className="text-white hover:text-orange-500 font-medium cursor-pointer">About</p>
+            <p className="text-white hover:text-[#DFC03E] font-medium cursor-pointer">About</p>
           </ScrollLink>
         </li>
         <li>
@@ -93,7 +118,7 @@ const Navbar = ({ logo }) => {
             duration={800}
             offset={-70}
           >
-            <p className="text-white hover:text-orange-500 font-medium cursor-pointer">Tokenomics</p>
+            <p className="text-white hover:text-[#DFC03E] font-medium cursor-pointer">Tokenomics</p>
           </ScrollLink>
         </li>
         <li>
@@ -103,7 +128,7 @@ const Navbar = ({ logo }) => {
             duration={800}
             offset={-70}
           >
-            <p className="text-white hover:text-orange-500 font-medium cursor-pointer">Roadmap</p>
+            <p className="text-white hover:text-[#DFC03E] font-medium cursor-pointer">Roadmap</p>
           </ScrollLink>
         </li>
         <li>
@@ -112,7 +137,7 @@ const Navbar = ({ logo }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <p className="text-white hover:text-orange-500 font-medium cursor-pointer">Whitepaper</p>
+            <p className="text-white hover:text-[#DFC03E] font-medium cursor-pointer">Whitepaper</p>
           </a>
         </li>
       </ul>

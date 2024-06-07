@@ -35,7 +35,7 @@ function Onepage() {
               </h1>
               <p className="text-2xl md:text-3xl lg:text-4xl text-white drop-shadow-lg mb-6">
                 Validate your{' '}
-                <span className="text-orange-500">
+                <span className="text-[#DFC03E]">
                   <Typewriter
                     words={['Smart Contract', 'Transaction Audit', 'Security Audit']}
                     loop={0}

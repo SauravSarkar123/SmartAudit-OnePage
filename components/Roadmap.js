@@ -42,7 +42,7 @@ const Roadmap = () => {
       <GridBackgroundDemo/>
       <div className="container mx-auto px-6 relative z-10 ">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold mb-4">Roadmap</h2>
+          <h2 className="text-5xl font-bold mb-4 text-[#DFC03E]">Roadmap</h2>
           <p className="text-xl leading-relaxed">
             Our roadmap outlines our planned milestones and key achievements as
             we build and grow our blockchain dApp ecosystem.

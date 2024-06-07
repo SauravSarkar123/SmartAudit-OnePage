@@ -9,7 +9,7 @@ const About = () => {
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold mb-6">About Us</h2>
           <p className="text-lg leading-relaxed max-w-2xl mx-auto">
-            We are passionate blockchain experts dedicated to securing smart contracts and blockchain transactions. Our mission: to safeguard your assets with thorough audits and ensure your blockchain projects' integrity.
+            We are passionate blockchain experts dedicated to securing smart contracts and blockchain transactions. Our mission: to safeguard your assets with thorough audits and ensure your blockchain projects&apos; integrity.
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 justify-center">

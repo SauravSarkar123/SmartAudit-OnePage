@@ -30,7 +30,7 @@ const Why = () => {
               style={{ backgroundImage: 'url(/icon2.jpg)' }}
             >
               <p className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-75 text-sm leading-relaxed opacity-0 hover:opacity-100 transition-opacity duration-300 p-4 rounded-lg">
-                Spydar360's Cyber Defense Center offers 24/7 blockchain monitoring, detecting and mitigating threats instantly to prevent hacks and financial losses, guaranteeing uninterrupted service.
+                Spydar360&apos;s Cyber Defense Center offers 24/7 blockchain monitoring, detecting and mitigating threats instantly to prevent hacks and financial losses, guaranteeing uninterrupted service.
               </p>
             </div>
             <h4 className="text-xl font-bold mt-4 relative text-gradient">Real-Time Monitoring and Incident Response</h4>
@@ -52,7 +52,7 @@ const Why = () => {
               style={{ backgroundImage: 'url(/icon4.jpg)' }}
             >
               <p className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-75 text-sm leading-relaxed opacity-0 hover:opacity-100 transition-opacity duration-300 p-4 rounded-lg">
-                Spydar360 harnesses blockchain's power for a decentralized, transparent, and high-performance security infrastructure, ensuring your Dapp is reliable and resilient against failures and censorship.
+                Spydar360 harnesses blockchain&apos;s power for a decentralized, transparent, and high-performance security infrastructure, ensuring your Dapp is reliable and resilient against failures and censorship.
               </p>
             </div>
             <h4 className="text-xl font-bold mt-4 relative text-gradient">Decentralized and Resilient Security Infrastructure</h4>

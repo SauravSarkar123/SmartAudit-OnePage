@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.text-blue-900 {
+  color: #1c3d5a; /* Dark Blue text */
+}
+/* In your CSS file */
+/* In your CSS file */
+.background-gradient {
+  background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(0, 0, 0, 1) 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #f97316, #ef4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.neon-card {
+  position: relative;
+  z-index: 1;
+  border-radius: 50%; /* Ensure the card is circular */
+  overflow: hidden;
+}
+
+.neon-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110%; /* Slightly larger to ensure it covers the edges */
+  height: 110%; /* Slightly larger to ensure it covers the edges */
+  border-radius: 50%; /* Match the border-radius of the card */
+  background: conic-gradient(
+    from 0deg,
+    rgba(0, 255, 255, 0.2),
+    rgba(0, 255, 255, 0.8),
+    rgba(0, 255, 255, 0.2),
+    rgba(0, 255, 255, 0.2),
+    rgba(0, 255, 255, 0.2)
+  );
+  transform: translate(-50%, -50%);
+  animation: rotate-neon 5s linear infinite;
+  z-index: -1; /* To place the neon effect behind the content */
+}
+
+@keyframes rotate-neon {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.Documents-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: fit-content;
+  height: 45px;
+  border: 2px solid #ffffff; /* Visible border */
+  padding: 0px 15px;
+  border-radius: 5px;
+  background: black;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.Documents-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 200%;
+  height: 200%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent 50%);
+  transition: all 0.5s;
+}
+
+.Documents-btn:hover::before {
+  left: 50%;
+}
+
+.folderContainer {
+  width: 40px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.fileBack {
+  z-index: 1;
+  width: 80%;
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.filePage {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  z-index: 2;
+  transition: all 0.3s ease-out;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.fileFront {
+  width: 85%;
+  height: auto;
+  position: absolute;
+  z-index: 3;
+  opacity: 0.95;
+  transform-origin: bottom;
+  transition: all 0.3s ease-out;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.text {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.Documents-btn:hover .filePage {
+  transform: translateY(-5px);
+}
+
+.Documents-btn:hover {
+ 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.Documents-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.Documents-btn:hover .fileFront {
+  transform: rotateX(30deg);
+}
+
+.Documents-btn .text {
+  position: relative;
+  z-index: 10;
+}
+
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+  /* overflow: hidden; */
+}
+
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  transform: rotate(-45deg);
+}
+
+.star {
+  --star-color: var(--primary-color, #ffffff);
+  --star-tail-length: 6em;
+  --star-tail-height: 2px;
+  --star-width: calc(var(--star-tail-length) / 6);
+  --fall-duration: 9s;
+  --tail-fade-duration: var(--fall-duration);
+
+  position: absolute;
+  top: var(--top-offset);
+  left: 0;
+  width: var(--star-tail-length);
+  height: var(--star-tail-height);
+  color: var(--star-color);
+  background: linear-gradient(45deg, currentColor, transparent);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px currentColor);
+  transform: translate3d(104em, 0, 0);
+  animation: fall var(--fall-duration) var(--fall-delay) linear infinite, tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
+}
+
+.star::before, .star::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: calc(var(--star-width) / -2);
+  width: var(--star-width);
+  height: 100%;
+  background: linear-gradient(45deg, transparent, currentColor, transparent);
+  border-radius: inherit;
+  animation: blink 2s linear infinite;
+}
+
+.star::before {
+  transform: rotate(45deg);
+}
+
+.star::after {
+  transform: rotate(-45deg);
+}
+
+@keyframes fall {
+  to {
+    transform: translate3d(-30em, 0, 0);
+  }
+}
+
+@keyframes tail-fade {
+  0%, 50% {
+    width: var(--star-tail-length);
+    opacity: 1;
+  }
+
+  70%, 80% {
+    width: 0;
+    opacity: 0.4;
+  }
+
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.star:nth-child(1) { --star-tail-length: 5.3em; --top-offset: 32vh; --fall-duration: 8.1s; --fall-delay: 5.7s; }
+.star:nth-child(2) { --star-tail-length: 6.5em; --top-offset: 70vh; --fall-duration: 9.2s; --fall-delay: 4.4s; }
+.star:nth-child(3) { --star-tail-length: 5.8em; --top-offset: 57vh; --fall-duration: 7.3s; --fall-delay: 8.0s; }
+.star:nth-child(4) { --star-tail-length: 6.0em; --top-offset: 15vh; --fall-duration: 6.1s; --fall-delay: 3.1s; }
+.star:nth-child(5) { --star-tail-length: 5.7em; --top-offset: 95vh; --fall-duration: 9.5s; --fall-delay: 6.8s; }
+/* Add similar rules for the remaining stars */
+
+

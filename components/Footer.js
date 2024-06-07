@@ -8,9 +8,9 @@ const Footer = () => {
             <div class="container px-5 py-4 mx-auto flex items-center sm:flex-row flex-col">
                 <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
                     <img
-                        src="/logo.png"
+                        src="/Logo.png"
                         className="h-16"
-                        alt="InvoiceChain Logo"
+                        alt="Smart Audit Logo"
                     />
                    
                 </a>

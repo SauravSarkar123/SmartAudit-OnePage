@@ -6,6 +6,7 @@ import Tokenomics from '@/components/Tokenomics';
 import Why from '@/components/why';
 import Roadmap from '@/components/Roadmap';
 import About from '@/components/About';
+import Footer from '@/components/Footer';
 
 const CardWithImageBackground = ({ image }) => {
   return (
@@ -99,6 +100,9 @@ function Onepage() {
       <div className="py-12 bg-gray-900">
         <Roadmap />
       </div>
+      <footer>
+        <Footer/>
+      </footer>
     </>
   );
 }

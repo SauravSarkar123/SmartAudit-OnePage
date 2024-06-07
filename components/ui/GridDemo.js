@@ -18,17 +18,17 @@
 // }
 
 import React from "react";
- // Import the CSS file for the star background
+
 
 export function GridBackgroundDemo() {
   return (
-    <div className="fixed inset-0 w-full h-full bg-black flex items-center justify-center z-0">
-      <div className="stars">
-        {[...Array(50)].map((_, i) => (
-          <div key={i} className="star"></div>
-        ))}
-      </div>
+    <div className="fixed inset-0 w-full h-full flex items-center justify-center z-0">
+      <div id="stars"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
     </div>
   );
 }
+
+
 

@@ -113,6 +113,16 @@ const Navbar = ({ logo }) => {
         </li>
         <li>
           <ScrollLink
+            to="why"
+            smooth={true}
+            duration={800}
+            offset={-70}
+          >
+            <p className="text-white hover:text-[#DFC03E] font-medium cursor-pointer">Why SmartAudit?</p>
+          </ScrollLink>
+        </li>
+        <li>
+          <ScrollLink
             to="tokenomics"
             smooth={true}
             duration={800}
@@ -131,7 +141,7 @@ const Navbar = ({ logo }) => {
             <p className="text-white hover:text-[#DFC03E] font-medium cursor-pointer">Roadmap</p>
           </ScrollLink>
         </li>
-        <li>
+        {/* <li>
           <a
             href="https://drive.google.com/file/d/11BuM2dQpIwzjztYjF7d5CpLWqTgmhU64/view?usp=sharing"
             target="_blank"
@@ -139,7 +149,7 @@ const Navbar = ({ logo }) => {
           >
             <p className="text-white hover:text-[#DFC03E] font-medium cursor-pointer">Whitepaper</p>
           </a>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );
